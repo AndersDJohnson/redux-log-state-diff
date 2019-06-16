@@ -1,0 +1,25 @@
+{
+  "name": "redux-log-state-diff-middleware",
+  "version": "1.0.0",
+  "description": "Redux middleware to log actions that change given subsets of state.",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "dependencies": {
+    "deep-diff": "^1.0.2",
+    "lodash.get": "4.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "jest": "^24.8.0",
+    "microbundle": "^0.11.0",
+    "redux": "latest"
+  }
+}
