@@ -41,4 +41,21 @@ const logStateDiffMiddleware = (predicates, options = {}) => {
   };
 };
 
+const logStateDiffMiddlewareParams = (predicates, options) =>
+  logStateDiffMiddleware(
+    [
+      ...predicates,
+      ...(typeof window === "undefined"
+        ? []
+        : (
+            new URLSearchParams(window.location.search).get(
+              "__REDUX_LOG_STATE_DIFF__"
+            ) || ""
+          ).split(","))
+    ],
+    options
+  );
+
+export { logStateDiffMiddlewareParams };
+
 export default logStateDiffMiddleware;
