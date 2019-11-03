@@ -1,14 +1,24 @@
 {
-  "name": "redux-log-state-diff-middleware",
+  "name": "redux-log-state-diff",
   "version": "1.0.0",
   "description": "Redux middleware to log actions that change given subsets of state.",
   "license": "MIT",
   "author": "Anders D. Johnson",
-  "repository": "AndersDJohnson/redux-log-state-diff-middleware",
+  "repository": "AndersDJohnson/redux-log-state-diff",
   "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "unpkg": "dist/index.umd.js",
+  "keywords": [
+    "redux",
+    "redux-logger",
+    "redux-log-diff",
+    "redux-log",
+    "middleware",
+    "state",
+    "state",
+    "diff"
+  ],
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch"

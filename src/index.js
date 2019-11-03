@@ -3,7 +3,7 @@ import { diff } from "deep-object-diff";
 
 const defaultLog = ({ action, diff, predicate }) => {
   console.log(
-    `redux-log-state-diff-middleware: action "${action.type}", predicate ${
+    `redux-log-state-diff: action "${action.type}", predicate ${
       predicate.str ? `"${predicate.str}"` : "function"
     }`,
     diff
@@ -13,7 +13,7 @@ const defaultLog = ({ action, diff, predicate }) => {
 const getPredicate = p => (prevState, nextState) =>
   get(prevState, p) !== get(nextState, p);
 
-const logStateDiffMiddleware = (predicates, options = {}) => {
+const logStateDiff = (predicates, options = {}) => {
   const { log = defaultLog } = options;
 
   predicates = predicates.map(p =>
@@ -41,8 +41,8 @@ const logStateDiffMiddleware = (predicates, options = {}) => {
   };
 };
 
-const logStateDiffMiddlewareParams = (predicates, options) =>
-  logStateDiffMiddleware(
+const logStateDiffParams = (predicates, options) =>
+  logStateDiff(
     [
       ...predicates,
       ...(typeof window === "undefined"
@@ -56,6 +56,6 @@ const logStateDiffMiddlewareParams = (predicates, options) =>
     options
   );
 
-export { logStateDiffMiddlewareParams };
+export { logStateDiffParams };
 
-export default logStateDiffMiddleware;
+export default logStateDiff;

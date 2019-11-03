@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
-import logStateDiffMiddleware from ".";
+import logStateDiff from ".";
 
 const mockLog = () => jest.fn(({ action, diff }) => {
   console.log("diff", action.type, diff);
@@ -18,13 +18,13 @@ const makeStore = (log, diffs) =>
   createStore(
     reducer,
     applyMiddleware(
-      logStateDiffMiddleware(diffs, {
+      logStateDiff(diffs, {
         log
       })
     )
   );
 
-describe("logStateDiffMiddleware", () => {
+describe("logStateDiff", () => {
   it("should work for two matching actions", () => {
     const log = mockLog();
 
