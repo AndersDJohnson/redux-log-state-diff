@@ -1,8 +1,14 @@
 import get from "lodash.get";
 import { diff } from "deep-diff";
 
-const defaultLog = ({ action, diff }) =>
-  console.log("redux-log-state-diff-middleware matched", action.type, diffed);
+const defaultLog = ({ action, diff, predicate }) => {
+  console.log(
+    `redux-log-state-diff-middleware: action "${action.type}", predicate ${
+      predicate.str ? `"${predicate.str}"` : "function"
+    }`,
+    diff
+  );
+};
 
 const getPredicate = p => (prevState, nextState) =>
   get(prevState, p) !== get(nextState, p);
@@ -11,7 +17,7 @@ const logStateDiffMiddleware = (predicates, options = {}) => {
   const { log = defaultLog } = options;
 
   predicates = predicates.map(p =>
-    typeof p !== "string" ? p : getPredicate(p)
+    typeof p !== "string" ? { fn: p } : { fn: getPredicate(p), str: p }
   );
 
   return store => next => action => {
@@ -20,11 +26,17 @@ const logStateDiffMiddleware = (predicates, options = {}) => {
     next(action);
     const nextState = getState();
 
-    const match = predicates.some(p => p(prevState, nextState));
+    const matchingPredicate = predicates.find(p => p.fn(prevState, nextState));
 
-    if (match) {
+    if (matchingPredicate) {
       const diffed = diff(prevState, nextState);
-      log({ action, diff: diffed, prevState, nextState });
+      log({
+        action,
+        predicate: matchingPredicate,
+        diff: diffed,
+        prevState,
+        nextState
+      });
     }
   };
 };
