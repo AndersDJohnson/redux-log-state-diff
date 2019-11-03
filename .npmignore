@@ -1,3 +1,6 @@
+.idea
+babel.config.js
+
 # Created by https://www.gitignore.io/api/node,macos,vim
 # Edit at https://www.gitignore.io/?templates=node,macos,vim
 
