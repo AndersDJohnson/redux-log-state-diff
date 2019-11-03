@@ -45,9 +45,7 @@ import { logStateDiffParams } from 'redux-log-state-diff'
 
 createStore(
   reducer,
-  applyMiddleware(
-    logStateDiffParams()
-  )
+  applyMiddleware(logStateDiffParams())
 )
 ```
 
