@@ -63,5 +63,4 @@ logStateDiff([
 ])
 ```
 
-`logStateDiffParams` accepts the same arguments as `logStateDiff`,
-where `pathsAndPredicates` (which will be merged with params-derived ones), and `options`.
+`logStateDiffParams` accepts the same arguments as `logStateDiff` - that is, `pathsAndPredicates` (which will be merged with params-derived ones), and `options`.
