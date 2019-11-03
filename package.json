@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Redux middleware to log actions that change given subsets of state.",
   "license": "MIT",
+  "author": "Anders D. Johnson",
+  "repository": "AndersDJohnson/redux-log-state-diff-middleware",
   "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
