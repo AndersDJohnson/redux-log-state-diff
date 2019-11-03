@@ -1,5 +1,5 @@
 import get from "lodash.get";
-import { diff } from "deep-diff";
+import { diff } from "deep-object-diff";
 
 const defaultLog = ({ action, diff, predicate }) => {
   console.log(
