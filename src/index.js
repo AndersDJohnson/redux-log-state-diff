@@ -13,7 +13,7 @@ const defaultLog = ({ action, diff, predicate }) => {
 const getPredicate = p => (prevState, nextState) =>
   get(prevState, p) !== get(nextState, p);
 
-const logStateDiff = (predicates, options = {}) => {
+const logStateDiff = (predicates = [], options = {}) => {
   const { log = defaultLog } = options;
 
   predicates = predicates.map(p =>
