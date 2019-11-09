@@ -1,6 +1,6 @@
 {
   "name": "redux-log-state-diff",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Redux middleware to log actions that change given subsets of state.",
   "license": "MIT",
   "author": "Anders D. Johnson",
