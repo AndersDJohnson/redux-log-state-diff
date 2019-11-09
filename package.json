@@ -7,7 +7,6 @@
   "repository": "AndersDJohnson/redux-log-state-diff",
   "source": "src/index.js",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "unpkg": "dist/index.umd.js",
   "keywords": [
     "redux",
