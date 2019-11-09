@@ -41,7 +41,7 @@ const logStateDiff = (predicates = [], options = {}) => {
   };
 };
 
-const logStateDiffParams = (predicates, options) =>
+const logStateDiffParams = (predicates = [], options) =>
   logStateDiff(
     [
       ...predicates,
