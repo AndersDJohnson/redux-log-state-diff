@@ -50,7 +50,7 @@ createStore(
 ```
 
 Then hit your app with a `__REDUX_LOG_STATE_DIFF__` query parameter with comma-separated state paths:\
-https://localhost:8000/my/path?__REDUX_LOG_STATE_DIFF__=subState.path,otherSubPath.somewhere
+[https://localhost:8000/my/path?\_\_REDUX_LOG_STATE_DIFF\_\_=subState.path,otherSubPath.somewhere](https://localhost:8000/my/path?__REDUX_LOG_STATE_DIFF__=subState.path,otherSubPath.somewhere)
 
 and it will act as if you had configured with these state paths:
 
